@@ -1,0 +1,91 @@
+﻿.mGrid {
+    width: 100%;
+    background-color: #fff;
+    margin: 5px 0 10px 0;
+    border: solid 1px #525252;
+    border-collapse: collapse;
+}
+
+    .mGrid td {
+        padding: 10px;
+        border: solid 1px #c1c1c1;
+        font-size: 12px;
+        color: #444444;
+    }
+
+    .mGrid th {
+        padding: 2px 2px;
+        padding-left: 10px;
+        padding-right: 10px;
+        color: #fff;
+        height: 40px;
+        background: #424242;
+        border-left: solid 1px #525252;
+        font-size: 13px;
+    }
+
+        .mGrid th a {
+            color: #fff;
+        }
+
+    .mGrid .alt {
+        background: #FBFBFB;
+        /*background: url(../images/2.jpg) repeat-x top;*/
+    }
+
+    .mGrid .pgr {
+        background: #424242;
+        /*background: #424242 url(../images/3.jpg) repeat-x top;*/
+    }
+
+        .mGrid .pgr table {
+            margin: 5px 0;
+        }
+
+        .mGrid .pgr td {
+            border-width: 0;
+            padding: 0 6px;
+            border-left: solid 1px #F1F1ED;
+            font-weight: bold;
+            color: #fff;
+            line-height: 12px;
+        }
+
+        .mGrid .pgr a {
+            color: #aaa;
+            text-decoration: none;
+        }
+
+            .mGrid .pgr a:hover {
+                color: #F1F1ED;
+                text-decoration: none;
+            }
+
+    .mGrid .alt:hover {
+        background: #B3CEF2;
+        /*background:#B3CEF2 url(../images/2.jpg) repeat-x top;*/
+    }
+
+.gridButton {
+    background-color: #444444;
+    border: 0 none;
+    border-radius: 4px;
+    color: white;
+    height: 30px;
+    padding-left: 15px;
+    padding-right: 15px;
+    cursor:pointer;
+}
+.clsSave {
+    background-color: #787878;
+    border: 0 none;
+    border-radius: 4px;
+    color: white;
+    height: 30px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.algnCenter{
+    text-align :center;
+}

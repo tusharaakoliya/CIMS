@@ -1,0 +1,241 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Student.master.cs" Inherits="Cims.Student" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head id="Head1" runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <title>CIAS</title>
+    <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
+
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <link href="css/Grid.css" rel="stylesheet" type="text/css" />
+
+    <!--Slider Code     Slider Code     Slider Code-->
+    <link rel="stylesheet" href="css/global.css" />
+    <link rel="stylesheet" href="Css/jquery-ui.css" />
+    <link rel="stylesheet" type="text/css" href="css/ddsmoothmenu.css" />
+
+
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="Scripts/jquery-ui-1.11.4.js"></script>
+    <script type="text/javascript" src="js/slides.min.jquery.js"></script>
+    
+    <script type="text/javascript" src="js/ddsmoothmenu.js"></script>
+    <script type="text/javascript">
+
+        $(function () {
+            $('#slides').slides({
+                preload: true,
+                preloadImage: 'images/loading.gif',
+                play: 5000,
+                pause: 2500,
+                hoverPause: true
+            });
+        });
+
+        ddsmoothmenu.init({
+            mainmenuid: "smoothmenu1", //menu DIV id
+            orientation: 'h', //Horizontal or vertical menu: Set to "h" or "v"
+            classname: 'ddsmoothmenu', //class added to menu's outer DIV
+            //customtheme: ["#1c5a80", "#18374a"],
+            contentsource: "markup" //"markup" or ["container_id", "path_to_menu_file"]
+        })
+    </script>
+
+    <!--	Menu code         Menu code                     Menu code    -->
+
+
+</head>
+
+<body>
+    <form id="Form1" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server">
+        </asp:ScriptManager>
+        <div class="wrapper">
+            <!--block1-->
+
+            <div id="headerwrap">
+                <div id="header">
+                    <div>
+                        <h1 id="logo" style="position: absolute; top: 37px; left: 109px; margin: 0; font-size: 200%; letter-spacing: -1px; font-weight: normal; width: 650px;">
+                            <a href="#" style="text-decoration: none; color: White">
+                                <span style="font-weight: bold; color: #0099ff">Centralized Information and Admission System</span>
+                            </a>
+                        </h1>
+                    </div>
+                    <div class="rightside">
+                        <div class="smallmenu">
+                            <asp:Label ID="lblmsg" runat="server"></asp:Label>
+                            <asp:LinkButton ID="lnkbtnhome" runat="server" CausesValidation="false" PostBackUrl="Home.aspx" Text="Home"></asp:LinkButton>
+                            <asp:LinkButton ID="lnkbtnregister" runat="server" PostBackUrl="~/Register.aspx" CausesValidation="false" Text="Register"></asp:LinkButton>
+                            <asp:LinkButton ID="lnkbtnlogin" runat="server" CausesValidation="false" Text="Login" PostBackUrl="~/Login.aspx"></asp:LinkButton>
+
+                            <%--<asp:LinkButton ID="lnkbtnprofile" CausesValidation="false" runat="server" Text="My Profile" Visible="false" PostBackUrl="~/MyProfile.aspx"></asp:LinkButton>--%>
+                            <asp:LinkButton ID="lnkfillchoice" CausesValidation="false" runat="server" Text="My Choice" Visible="false" PostBackUrl="~/ChoiceFilling.aspx"></asp:LinkButton>
+                            <asp:LinkButton ID="lnkbtnlogout" runat="server" Font-Underline="true" CausesValidation="false" Text="Logout" Visible="false" OnClick="lnkbtnlogout_Click"></asp:LinkButton>
+                        </div>
+                        <div class="clr"></div>
+
+                        <div class="navigation_middel" style="float: right; width: 325px">
+                            <div id="smoothmenu1" class="ddsmoothmenu">
+                                <asp:Panel runat="server" ID="adminTopMenu">
+                                    <ul>
+                                        <li class="rounde1"><a href="Home.aspx">Home</a></li>
+                                        <li><a href="Collagelist.aspx">Collages</a></li>
+                                        <li><a href="Courselist.aspx">Course</a></li>
+                                        <li><a href="BranchList.aspx">Branch</a></li>
+                                        <li><a href="Result.aspx">Result</a></li>
+                                    </ul>
+                                </asp:Panel>
+                                <asp:Panel runat="server" ID="studentTopMenu">
+                                    <ul>
+                                        <li class="rounde1"><a href="Home.aspx">Home</a></li>
+                                        <li><a href="Admission.aspx">Admission</a></li>
+                                        <li><a href="Collagelist.aspx">Collages</a></li>
+                                        <li><a href="Courselist.aspx">Course</a></li>
+                                        <li><a href="Result.aspx">Result</a></li>
+                                    </ul>
+                                </asp:Panel>
+                                <asp:Panel runat="server" ID="publicTopMenu">
+                                    <ul>
+                                        <li class="rounde1"><a href="Home.aspx">Home</a></li>
+                                        <li><a href="Collagelist.aspx">Collages</a></li>
+                                        <li><a href="Courselist.aspx">Course</a></li>
+                                        <li><a href="BranchList.aspx">Branch</a></li>
+                                        <li><a href="Result.aspx">Result</a></li>
+                                    </ul>
+                                </asp:Panel>
+                                <br style="clear: left" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Endblock1-->
+            <!--block2-->
+            <div id="bannerwrap">
+                <div id="banner">
+                    <div id="example">
+                        <div id="slides">
+                            <div class="slides_container">
+                                <img src="images/2.jpg" width="980" height="357" border="0" alt="slider-3" />
+                                <img src="images/3.jpg" width="980" height="357" border="0" alt="slider-2" />
+                                <img src="images/4.jpg" width="980" height="357" border="0" alt="slider-3" />
+                                <img src="images/5.jpg" width="980" height="357" border="0" alt="slider-4" />
+                            </div>
+                            <!--<a href="#" class="prev"><img src="img/arrow-prev.png" width="24" height="43" alt="Arrow Prev"></a>
+						<a href="#" class="next"><img src="img/arrow-next.png" width="24" height="43" alt="Arrow Next"></a>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Endblock2-->
+            <!--block3-->
+            <div id="contentwrap">
+                <div id="content">
+                    <div class="black_title">
+                        <img src="images/black_top.png" width="980" height="5" border="0" alt="" />
+                    </div>
+                    <div class="upadates"><a href="#">Feedback</a></div>
+
+                    <div class="letestup_right">
+                        <div class="middeltitle">
+                            <marquee direction="left" scrolldelay="40" scrollamount="1" truespeed="truespeed" onmouseover="this.stop()" onmouseout="this.start()" style="width: 661px;">
+			<b><%--<a href="#" style="color:#0099ff">Science</a><a href="#" style="color:#0099ff">Commerce</a><a href="#" style="color:#0099ff">Arts</a> --%>
+			<a href="#" style="color:#e4ef2b;">
+			<i>( &nbsp; Welcome to visit our Website &nbsp;)</i>
+			</a>
+			</b></marquee>
+                        </div>
+                        <div class="socialmedia">
+                            <%--<a href="#"><img src="images/round1.jpg" width="24" height="24" border="0" alt="" /></a>
+			<a href="#"><img src="images/twitter.jpg" width="24" height="24" border="0" alt="" /></a>
+			<a href="#"><img src="images/f.b.jpg" width="24" height="24" border="0" alt="" /></a>
+			<a href="#"><img src="images/linkdin.png" width="24" height="24" border="0" alt="" /></a>--%>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="images/black_bottom.png" width="980" height="5" alt="" />
+                    </div>
+                    <div class="clr10px"></div>
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+
+                    <div class="clr18px"></div>
+                    <div class="tumbnail">
+
+                        <%--<div class="marquee0" id="mycrawler2">
+				<a href="#"><img src="images/01.png" width="152" height="152" border="0" alt="" /></a>
+				 <a href="#"><img src="images/11.png" width="152" height="152" border="0" alt="" /></a>
+				 <a href="#"><img src="images/12.jpg" width="152" height="152" border="0" alt="" /></a>
+				 <a href="#"><img src="images/13.png" width="152" height="152" border="0" alt="" /></a>
+				 <a href="#"><img src="images/08.png" width="152" height="152" border="0" alt="" /></a>
+				 <a href="#"><img src="images/06.png" width="152" height="152" border="0" alt="" /> </a>
+				
+</div>--%>
+                    </div>
+                    <div class="clr18px"></div>
+                </div>
+            </div>
+            <!--Endblock3-->
+            <div class="clr"></div>
+            <!--block3-->
+            <div id="footerwrap">
+                <div id="footer">
+                    <div class="leftfbox" style="width: 100%">
+                        <div class="block1" style="width: 33%">
+                            <!--main-->
+                            <div class="inner1">
+                                <div>
+                                    <img src="images/top_services.png" width="148" height="5" border="0" alt="" />
+                                </div>
+                                <div class="midelservice"><a href="AboutUs.aspx">About Us</a></div>
+                                <div>
+                                    <img src="images/top_services.png" width="148" height="5" border="0" alt="" />
+                                </div>
+                            </div>
+                            <!--main-->
+                        </div>
+                        <div class="block2" style="width: 33%">
+                            <!--main-->
+                            <div class="inner1">
+                                <div>
+                                    <img src="images/top_services.png" width="148" height="5" border="0" alt="" />
+                                </div>
+                                <div class="midelservice"><a href="ContectUs.aspx">Contact Us</a></div>
+                                <div>
+                                    <img src="images/top_services.png" width="148" height="5" border="0" alt="" />
+                                </div>
+                            </div>
+                            <!--main-->
+                        </div>
+                        <div class="block3" style="width: 33%">
+                            <!--main-->
+                            <div class="inner1">
+                                <div>
+                                    <img src="images/top_services.png" width="148" height="5" border="0" alt="" />
+                                </div>
+                                <div class="midelservice"><a href="Login.aspx">Login</a></div>
+                                <div>
+                                    <img src="images/bottom_services.png" width="148" height="5" border="0" alt="" />
+                                </div>
+                            </div>
+                            <!--main-->
+                        </div>
+                    </div>
+                    <div class="clr"></div>
+                    <div class="botmfoter">
+                        <div class="copyright">COPYRIGHT © 2016 CENTRALIZED INFORMATION & ADMISSION SYSTEM </div>
+                        <div class="site">Presented by TUSHAR AAKOLIYA <br/> SANDEEP KATHERIYA <br/>DARSHAN NAKUM
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Endblock3-->
+        </div>
+    </form>
+</body>
+</html>
+
